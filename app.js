@@ -41,29 +41,27 @@
       if (page === 'plans') window.fbq('track', 'ViewContent', { content_name: 'Planos Leão Play' });
     }
   }
+  function updateConsentStatus() {
+    const status = $('#cookie-status');
+    if (!status) return;
+    const choice = consentRead();
+    status.textContent = choice === 'accepted'
+      ? 'Preferência atual: cookies opcionais aceitos.'
+      : choice === 'rejected'
+        ? 'Preferência atual: cookies opcionais recusados.'
+        : 'Preferência atual: não definida. Rastreamento publicitário desativado.';
+  }
   function saveConsent(value) {
     marketingConsent = value === 'accepted';
     consentWrite(value);
-    const banner = $('#cookie-banner');
-    if (banner) banner.hidden = true;
+    updateConsentStatus();
     if (marketingConsent) startPixel();
-    // Switching from accepted to rejected cannot unload the running pixel.
-    // Reload without the pixel so the new preference is respected.
+    // A page refresh clears an already initialized pixel after consent is revoked.
     else if (pixelStarted) window.location.reload();
   }
-  function openCookiePreferences() {
-    const banner = $('#cookie-banner');
-    if (!banner) return;
-    banner.hidden = false;
-    banner.querySelector('[data-cookie-reject]')?.focus();
-  }
-  const banner = $('#cookie-banner');
-  if (banner) {
-    if (consentRead() === null) banner.hidden = false;
-    $('[data-cookie-accept]')?.addEventListener('click', () => saveConsent('accepted'));
-    $('[data-cookie-reject]')?.addEventListener('click', () => saveConsent('rejected'));
-    $$('[data-cookie-settings]').forEach(el => el.addEventListener('click', openCookiePreferences));
-  }
+  $$('[data-cookie-accept]').forEach(el => el.addEventListener('click', () => saveConsent('accepted')));
+  $$('[data-cookie-reject]').forEach(el => el.addEventListener('click', () => saveConsent('rejected')));
+  updateConsentStatus();
   if (marketingConsent) startPixel();
 
   $$('a[data-wa]').forEach(link => {
@@ -74,6 +72,16 @@
       if (marketingConsent && typeof window.fbq === 'function') {
         window.fbq('track', 'Contact', { content_name: `whatsapp_${kind}` });
       }
+    });
+  });
+
+  // Only one FAQ answer at a time. All start closed.
+  const faqItems = $$('.faq-list details');
+  faqItems.forEach(item => {
+    item.open = false;
+    item.addEventListener('toggle', () => {
+      if (!item.open) return;
+      faqItems.forEach(other => { if (other !== item) other.open = false; });
     });
   });
 

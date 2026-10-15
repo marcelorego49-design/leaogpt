@@ -54,3 +54,15 @@ Mensagens, configuração do Pixel e do vídeo ficam no início de `app.js`. Pre
 ## Nota sobre marcas
 
 As oito imagens do carrossel foram fornecidas pelo responsável e exibidas como referências de conteúdo, sem afirmação de parceria oficial com as respectivas plataformas. O responsável deve revisar o conteúdo público antes de anunciar.
+
+## Atualização V2 — versão compacta
+
+- Aviso de cookies **removido da interface de todas as páginas**. Preferências acessíveis na página `privacidade.html#preferencias`, por links no rodapé; não há popup automático ou manual.
+- **Importante para anúncios:** para novos visitantes que não autorizaram cookies opcionais, o Pixel não carregará. Isso preserva a escolha, mas reduz as conversões mensuráveis pela Meta. O funcionamento dos botões de WhatsApp é independente do Pixel.
+- Carrossel com ciclo de **26 segundos** (anteriormente 40s), mantendo repetição infinita e pausa por hover/foco; pessoas com preferência por redução de movimento não verão a animação.
+- Hero, seções, cartões e preços mais compactos no celular. CTA do vídeo **abaixo do player**; texto técnico retirado. FAQ fechado inicialmente, só uma resposta aberta por vez.
+- Use o ZIP para **substituir os arquivos** de mesmo nome no repositório GitHub conectado à Cloudflare Pages. A branch conectada poderá disparar deploy automaticamente.
+
+## Verificações recomendadas após publicar
+
+Abra `https://leaogpt.pages.dev/` no celular, recarregue sem cache, teste os botões, o vídeo e o carrossel. No Meta Events Manager, teste apenas com consentimento concedido em Privacidade → Preferências. O conteúdo jurídico da política deve ser revisado pela empresa.
