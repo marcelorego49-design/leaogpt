@@ -111,10 +111,20 @@
     const fallback = img.parentElement?.querySelector('.image-error');
     if (fallback) fallback.hidden = false;
   }));
-  $$('.logo-tile img').forEach(img => img.addEventListener('error', () => {
-    img.style.visibility = 'hidden';
-    img.parentElement?.classList.add('asset-not-loaded');
-  }));
+  // A broken R2 URL must not leave an empty tile in the moving carousel.
+  // Remove both repeated instances of the same image so both halves remain identical.
+  const logoImgs = $$('.marquee-set .logo-tile img');
+  const removeFailedLogo = (failedImg) => {
+    const src = failedImg.getAttribute('src');
+    logoImgs.forEach(img => {
+      if (img.getAttribute('src') === src) img.closest('.logo-tile')?.remove();
+    });
+  };
+  logoImgs.forEach(img => {
+    img.addEventListener('error', () => removeFailedLogo(img));
+    // Catch failures that happened before DOMContentLoaded / listener registration.
+    if (img.complete && img.naturalWidth === 0) removeFailedLogo(img);
+  });
 
   // Load the YouTube video when the demonstration enters the viewport.
   // Autoplay in mudo is requested; each browser decides whether to allow it.
