@@ -1,4 +1,4 @@
-/* Leão Play — interações simples e Meta Pixel condicionado ao consentimento. */
+/* Leão Play — interfaces e Meta Pixel na carga, respeitando recusas expressas registradas. */
 (() => {
   'use strict';
   const PIXEL_ID = '1419384443735371';
@@ -20,12 +20,14 @@
   const consentRead = () => { try { return localStorage.getItem(CONSENT_KEY); } catch (_) { return null; } };
   const consentWrite = (choice) => { try { localStorage.setItem(CONSENT_KEY, choice); } catch (_) { /* If storage is unavailable, keep this session only. */ } };
   let pixelStarted = false;
-  let marketingConsent = consentRead() === 'accepted';
+  // Modo solicitado para medição na entrada: ativo na ausência de recusa previamente registrada.
+  // Atenção: não constitui consentimento automático; validar a base legal do tratamento antes da publicação.
+  let marketingTrackingEnabled = consentRead() !== 'rejected';
 
   function startPixel() {
-    if (pixelStarted || !marketingConsent) return;
+    if (pixelStarted || !marketingTrackingEnabled) return;
     pixelStarted = true;
-    // Meta's official async bootstrap, called only after permission.
+    // Bootstrap assíncrono oficial: inicialização uma vez por página, salvo recusa registrada.
     (function (f, b, e, v, n, t, s) {
       if (f.fbq) return;
       n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
@@ -46,30 +48,30 @@
     if (!status) return;
     const choice = consentRead();
     status.textContent = choice === 'accepted'
-      ? 'Preferência atual: cookies opcionais aceitos.'
+      ? 'Preferência atual: medição publicitária ativada.'
       : choice === 'rejected'
-        ? 'Preferência atual: cookies opcionais recusados.'
-        : 'Preferência atual: não definida. Rastreamento publicitário desativado.';
+        ? 'Preferência atual: medição publicitária desativada.'
+        : 'Sem preferência registrada. A medição publicitária está ativada neste modo e pode ser desativada abaixo.';
   }
   function saveConsent(value) {
-    marketingConsent = value === 'accepted';
+    marketingTrackingEnabled = value === 'accepted';
     consentWrite(value);
     updateConsentStatus();
-    if (marketingConsent) startPixel();
+    if (marketingTrackingEnabled) startPixel();
     // A page refresh clears an already initialized pixel after consent is revoked.
     else if (pixelStarted) window.location.reload();
   }
   $$('[data-cookie-accept]').forEach(el => el.addEventListener('click', () => saveConsent('accepted')));
   $$('[data-cookie-reject]').forEach(el => el.addEventListener('click', () => saveConsent('rejected')));
   updateConsentStatus();
-  if (marketingConsent) startPixel();
+  if (marketingTrackingEnabled) startPixel();
 
   $$('a[data-wa]').forEach(link => {
     const kind = link.dataset.wa;
     const msg = messages[kind] || messages.geral;
     link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
     link.addEventListener('click', () => {
-      if (marketingConsent && typeof window.fbq === 'function') {
+      if (marketingTrackingEnabled && typeof window.fbq === 'function') {
         window.fbq('track', 'Contact', { content_name: `whatsapp_${kind}` });
       }
     });

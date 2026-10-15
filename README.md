@@ -20,7 +20,7 @@ Site criado do zero em HTML, CSS e JavaScript, sem framework e sem build obrigat
 3. Selecione **Framework preset: None**. Não é necessário comando de build. Diretório de saída: `.` (raiz do repositório), se solicitado.
 4. Publique e verifique a URL `.pages.dev` gerada. Depois poderá configurar um domínio personalizado.
 5. Teste as páginas, os botões WhatsApp e a incorporação do YouTube.
-6. Se autorizar cookies de marketing, verifique os eventos do Pixel no **Meta Events Manager → Test Events** e/ou no **Meta Pixel Helper**.
+6. Após verificar a base legal adotada e publicar, teste os eventos no **Meta Events Manager → Test Events** e/ou no **Meta Pixel Helper**.
 
 ## Imagens do Cloudflare R2
 
@@ -34,14 +34,14 @@ O vídeo tenta iniciar automaticamente em mudo ao entrar na área visível, com 
 
 ## Meta Pixel
 
-Pixel ID: `1419384443735371`. O Pixel só carrega depois que o usuário aceita os cookies opcionais. Ele envia:
-- `PageView` na abertura de páginas quando há consentimento;
-- `ViewContent` ao acessar `planos.html` com consentimento;
-- `Contact` quando o usuário clica em botão de WhatsApp com consentimento.
+Pixel ID: `1419384443735371`. Nesta versão de teste, o Pixel é inicializado ao carregar a página quando **não existe recusa registrada** neste navegador. **Isso não significa consentimento e depende da confirmação prévia da base legal aplicável para publicidade.** Ele envia:
+- `PageView` na abertura de páginas quando a medição está habilitada;
+- `ViewContent` ao acessar `planos.html` quando a medição está habilitada;
+- `Contact` quando o usuário clica em botão de WhatsApp e a medição está habilitada.
 
 **Não envia `Purchase`** porque as compras são confirmadas fora do site.
 
-Preferências são salvas em `localStorage`; a alteração pode ser feita pelo rodapé. O aviso não é uma certificação jurídica de conformidade — as políticas da empresa e os requisitos da LGPD devem ser revisados antes da divulgação em larga escala.
+Uma recusa expressa é persistida em `localStorage` e respeitada nas visitas seguintes. No modo padrão, o script pode ter enviado dados antes da pessoa recusar; uma recusa não apaga dados já transmitidos. **A ANPD recomenda desativar por padrão cookies não necessários quando o fundamento é consentimento; não publicar este modo de rastreamento sem avaliar a base legal com profissional qualificado.**
 
 ## Contatos e preços
 
@@ -58,11 +58,27 @@ As oito imagens do carrossel foram fornecidas pelo responsável e exibidas como 
 ## Atualização V2 — versão compacta
 
 - Aviso de cookies **removido da interface de todas as páginas**. Preferências acessíveis na página `privacidade.html#preferencias`, por links no rodapé; não há popup automático ou manual.
-- **Importante para anúncios:** para novos visitantes que não autorizaram cookies opcionais, o Pixel não carregará. Isso preserva a escolha, mas reduz as conversões mensuráveis pela Meta. O funcionamento dos botões de WhatsApp é independente do Pixel.
+- Na V2, o Pixel ficava desativado para todos os novos visitantes; a V3 altera o comportamento para carregar, por padrão, **exceto quando existe recusa expressa** registrada. O funcionamento dos botões de WhatsApp continua independente do Pixel.
 - Carrossel com ciclo de **26 segundos** (anteriormente 40s), mantendo repetição infinita e pausa por hover/foco; pessoas com preferência por redução de movimento não verão a animação.
 - Hero, seções, cartões e preços mais compactos no celular. CTA do vídeo **abaixo do player**; texto técnico retirado. FAQ fechado inicialmente, só uma resposta aberta por vez.
 - Use o ZIP para **substituir os arquivos** de mesmo nome no repositório GitHub conectado à Cloudflare Pages. A branch conectada poderá disparar deploy automaticamente.
 
 ## Verificações recomendadas após publicar
 
-Abra `https://leaogpt.pages.dev/` no celular, recarregue sem cache, teste os botões, o vídeo e o carrossel. No Meta Events Manager, teste apenas com consentimento concedido em Privacidade → Preferências. O conteúdo jurídico da política deve ser revisado pela empresa.
+Abra `https://leaogpt.pages.dev/` no celular, recarregue sem cache, teste os botões, o vídeo e o carrossel. No Meta Events Manager, faça os testes em um navegador sem bloqueador de anúncios e sem recusa salva. O recebimento ainda precisa ser confirmado diretamente pela Meta. O conteúdo jurídico da política deve ser revisado pela empresa.
+
+## Atualização V3 — Pixel na entrada (ainda exige avaliação jurídica)
+
+- Corrigida a inicialização: `PageView` logo após abertura do site sem recusa registrada, `ViewContent` em Planos, `Contact` nos links do WhatsApp.
+- Mantida a opção de desativar na página de privacidade e o bloqueio para quem tiver recusado.
+- Nenhum `Purchase` é disparado.
+- **Aviso:** a alteração não constitui consentimento automático. Para cookies de publicidade, obtenha validação da hipótese legal antes de publicar.
+- Navegadores com proteção de rastreamento, extensões de bloqueio ou restrições de terceiros ainda podem impedir eventos; não existe garantia de captar 100% de visitantes.
+
+### Como testar
+
+1. Abra uma janela anônima, sem bloqueador de anúncios, e entre em `https://leaogpt.pages.dev/`.
+2. Meta Events Manager > Test Events: aguarde por `PageView`.
+3. Visite `planos.html`: espere `PageView` e `ViewContent`.
+4. Clique num botão WhatsApp: espere `Contact`; o clique não significa venda concluída.
+5. Teste a recusa em Privacidade: não deve haver Pixel em visitas futuras no mesmo navegador.
