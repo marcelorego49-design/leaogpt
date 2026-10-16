@@ -129,3 +129,11 @@ Preço do plano trimestral IPTV alterado de R$ 75,00 para **R$ 65,00** nas pági
 
 ## Atualização V10 — carrossel de depoimentos
 Apenas `index.html` foi alterado: 8 depoimentos continuam preservados, incluindo os textos completos nos botões de expansão, imagens de comprovação, datas e nomes. Navegação horizontal manual (toque, trackpad e setas), sem reprodução automática. O CSS e JS exclusivos dessa seção estão no próprio `index.html`; `app.js`, `styles.css` e as outras páginas permanecem iguais à V9.
+
+
+## V12 — restauração do carrossel V10 e print interno
+- Revertida a seção de depoimentos exatamente ao formato V10 (8 avaliações, carrossel horizontal manual, setas, swipe e progresso).
+- Botões Ver print abrem em janela dentro do site; fechamento por X, Voltar, toque fora, Escape ou voltar do navegador.
+- Desde 2022 foi movido para uma seção independente **depois de Dúvidas e antes da chamada final**, afastada dos depoimentos.
+- **Apenas `index.html` mudou.** Todos os arquivos CSS/JS externos, Pixel, WhatsApp, preços e demais páginas continuam idênticos aos da V10/V11.
+- Os links das fotos seguem no R2 do cliente; testar em produção.

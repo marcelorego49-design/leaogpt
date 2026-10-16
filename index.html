@@ -86,6 +86,43 @@
 @media(max-width:540px){.reviews-section .reviews-heading{margin-bottom:23px}.reviews-section .reviews-toolbar{margin-bottom:11px}.reviews-section .reviews-instruction{font-size:.75rem}.reviews-section .reviews-arrows{gap:7px}.reviews-section .reviews-arrow{width:36px;height:36px;flex-basis:36px}.reviews-section .reviews-track{gap:11px;padding-bottom:11px}.reviews-section .review-card{flex-basis:calc(100% - 39px);min-height:282px;padding:20px 19px 17px;border-radius:15px}.reviews-section .review-card-top{margin-bottom:12px}.reviews-section .review-text{font-size:.87rem}.reviews-section .reviews-footer{margin-top:21px;padding-top:17px}}
 @media(prefers-reduced-motion:reduce){.reviews-section .reviews-progress-bar,.reviews-section .reviews-arrow{transition:none}}
 </style>
+
+<style id="leao-v12-modal-and-history">
+/* Modal acessível nativo: o visitante permanece na mesma página e posição. */
+.review-lightbox{box-sizing:border-box;position:fixed;inset:0;margin:auto;padding:0;width:min(850px,calc(100vw - 28px));max-width:min(850px,calc(100vw - 28px));max-height:min(92dvh,900px);border:1px solid rgba(227,189,123,.33);border-radius:18px;color:#f2f4f6;background:#10151d;box-shadow:0 28px 100px rgba(0,0,0,.75);overflow:hidden}
+.review-lightbox:not([open]){display:none}
+.review-lightbox::backdrop{background:rgba(2,5,10,.83);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.review-lightbox-inner{display:flex;flex-direction:column;max-height:min(92dvh,900px);min-width:0}
+.review-lightbox-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;flex:0 0 auto;padding:15px 18px;border-bottom:1px solid rgba(255,255,255,.075)}
+.review-lightbox-kicker{display:block;margin:0 0 3px;color:#cda66a;font-weight:800;letter-spacing:.15em;font-size:.61rem}
+.review-lightbox-heading h3{font-size:1.05rem;line-height:1.3;font-weight:750;color:#f1ede7;margin:0}
+.review-lightbox-close{width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:11px;color:#f7f3e9;font-size:1.6rem;line-height:1;cursor:pointer}
+.review-lightbox-close:hover{background:rgba(222,179,108,.16)}
+.review-lightbox-body{min-height:145px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:auto;overscroll-behavior:contain;padding:14px;background:radial-gradient(circle at 50% 25%,rgba(220,171,100,.07),transparent 55%),#0b1017}
+.review-lightbox-body img{display:block;max-width:100%;max-height:calc(92dvh - 177px);width:auto;height:auto;object-fit:contain;border-radius:6px}
+.review-lightbox-body img:not([src]){display:none}
+.review-lightbox-error{padding:35px 15px;text-align:center;color:#d5dce4;font-size:.9rem;line-height:1.65}
+.review-lightbox-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:0 0 auto;padding:11px 18px;border-top:1px solid rgba(255,255,255,.075)}
+.review-lightbox-footer p{margin:0;color:#a6b0bd;font-size:.72rem;line-height:1.45}
+.review-lightbox-back{border:1px solid rgba(230,189,115,.4);background:rgba(222,177,101,.10);border-radius:10px;padding:10px 15px;color:#f0d29c;font-weight:750;cursor:pointer;font-size:.79rem;white-space:nowrap}
+.review-lightbox-back:hover{background:rgba(222,177,101,.19)}
+.review-lightbox button:focus-visible{outline:2px solid #f2d7aa;outline-offset:3px}
+@media(max-width:540px){.review-lightbox{width:calc(100vw - 16px);max-width:calc(100vw - 16px);max-height:95dvh;border-radius:12px}.review-lightbox-inner{max-height:95dvh}.review-lightbox-heading{padding:12px}.review-lightbox-heading h3{font-size:.98rem}.review-lightbox-body{padding:9px;min-height:110px}.review-lightbox-body img{max-height:calc(95dvh - 148px)}.review-lightbox-footer{padding:10px 12px}.review-lightbox-footer p{font-size:.65rem}.review-lightbox-back{padding:10px 12px;font-size:.75rem}}
+@media(prefers-reduced-motion:reduce){.review-lightbox{scroll-behavior:auto}}
+
+/* V12: trajetória em seção autônoma, distante do carrossel. */
+.leao-history-section{padding:40px 0 28px;background:#0b0e13}
+.leao-history-panel{display:grid;grid-template-columns:minmax(180px,.68fr) minmax(0,2fr);align-items:center;gap:28px;border:1px solid rgba(222,182,115,.21);border-radius:17px;background:linear-gradient(110deg,rgba(211,161,88,.09),rgba(255,255,255,.022) 56%,rgba(255,255,255,.015));padding:25px 30px}
+.leao-history-year{display:flex;flex-direction:column;align-items:flex-start;gap:5px;padding-right:21px;border-right:1px solid rgba(222,182,115,.19)}
+.leao-history-year span{font-size:.61rem;color:#dfbc85;letter-spacing:.18em;font-weight:800;text-transform:uppercase}
+.leao-history-year strong{color:#f4efe7;font-size:clamp(1.45rem,2.5vw,2.05rem);font-weight:800;letter-spacing:-.04em;line-height:1.2}
+.leao-history-year em{color:#e7bc7e;font-style:normal}
+.leao-history-text h2{font-size:clamp(1.05rem,1.7vw,1.25rem);color:#f2eee8;font-weight:760;line-height:1.3;margin:0 0 7px}
+.leao-history-text p{font-size:.86rem;color:#bac5ce;line-height:1.65;margin:0}
+.leao-history-text .leao-history-note{color:#929fac;font-size:.76rem;margin-top:6px}
+@media(max-width:700px){.leao-history-section{padding:26px 0 16px}.leao-history-panel{grid-template-columns:1fr;gap:15px;padding:21px 19px}.leao-history-year{border-right:0;border-bottom:1px solid rgba(222,182,115,.16);padding-right:0;padding-bottom:11px}.leao-history-year strong{font-size:1.68rem}.leao-history-text p{font-size:.82rem}}
+
+</style>
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Pular para conteúdo</a>
@@ -129,22 +166,22 @@ Minha experiência com vocês é muito boa. Sempre que preciso de um auxílio no
 Não tenho nada a reclamar, somente falar muito bem.
 
 Tenha uma excelente sexta-feira e bom trabalho.</blockquote></details>
-  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103513_500.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem do depoimento de Luiz em nova aba">Ver print <span aria-hidden="true">↗</span></a></div>
+  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103513_500.jpg" aria-label="Visualizar print original do depoimento de Luiz sem sair do site">Ver print <span aria-hidden="true">↗</span></a></div>
 </article>
 <article class="review-card">
   <div class="review-card-top"><div class="review-person"><span class="review-avatar" aria-hidden="true">G</span><div><h3>George</h3><span>Cliente Leão Play</span></div></div><span class="review-quote-mark" aria-hidden="true">“</span></div>
   <blockquote class="review-text">Gosto do serviço pois entrega  que promete, e o suporte é eficiente, o companheiro Marcelo sempre responde! Tira as dúvidas, já uso o serviço a algum  tempo 👍</blockquote>
-  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_104604_787.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem do depoimento de George em nova aba">Ver print <span aria-hidden="true">↗</span></a></div>
+  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_104604_787.jpg" aria-label="Visualizar print original do depoimento de George sem sair do site">Ver print <span aria-hidden="true">↗</span></a></div>
 </article>
 <article class="review-card">
   <div class="review-card-top"><div class="review-person"><span class="review-avatar" aria-hidden="true">M</span><div><h3>Maria</h3><span>Cliente Leão Play</span></div></div><span class="review-quote-mark" aria-hidden="true">“</span></div>
   <blockquote class="review-text">... O app é completo,não trava,a qualidade da imagem é ótima!Recomendo de olhos fechados!</blockquote>
-  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103500_971.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem do depoimento de Maria em nova aba">Ver print <span aria-hidden="true">↗</span></a></div>
+  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103500_971.jpg" aria-label="Visualizar print original do depoimento de Maria sem sair do site">Ver print <span aria-hidden="true">↗</span></a></div>
 </article>
 <article class="review-card">
   <div class="review-card-top"><div class="review-person"><span class="review-avatar" aria-hidden="true">R</span><div><h3>Rodrigo</h3><span>Cliente Leão Play</span></div></div><span class="review-quote-mark" aria-hidden="true">“</span></div>
   <blockquote class="review-text">Olá, minha experiência está ótima, o app é muito bom e fácil de usar.</blockquote>
-  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG-20261016-WA0047.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem do depoimento de Rodrigo em nova aba">Ver print <span aria-hidden="true">↗</span></a></div>
+  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG-20261016-WA0047.jpg" aria-label="Visualizar print original do depoimento de Rodrigo sem sair do site">Ver print <span aria-hidden="true">↗</span></a></div>
 </article>
 <article class="review-card">
   <div class="review-card-top"><div class="review-person"><span class="review-avatar" aria-hidden="true">D</span><div><h3>Demi</h3><span>Cliente Leão Play</span></div></div><span class="review-quote-mark" aria-hidden="true">“</span></div>
@@ -152,22 +189,22 @@ Tenha uma excelente sexta-feira e bom trabalho.</blockquote></details>
 Oferecendo catálogos vastos a filmes, séries, documentários ,etc...
 É muito legal o entretenimento, a liberdade e o incentivo que a plataforma nos oferece!
 Que seja uma boa indicação para continuar com essa estrutura de atendimento.</blockquote></details>
-  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103442_827.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem do depoimento de Demi em nova aba">Ver print <span aria-hidden="true">↗</span></a></div>
+  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103442_827.jpg" aria-label="Visualizar print original do depoimento de Demi sem sair do site">Ver print <span aria-hidden="true">↗</span></a></div>
 </article>
 <article class="review-card">
   <div class="review-card-top"><div class="review-person"><span class="review-avatar" aria-hidden="true">R</span><div><h3>Rogério</h3><span>Cliente Leão Play</span></div></div><span class="review-quote-mark" aria-hidden="true">“</span></div>
   <blockquote class="review-text">Bom dia nao tenho que reclamar sempre fui bem atendido quando solicitado parabéns pelo profissionalismo</blockquote>
-  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103527_841.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem do depoimento de Rogério em nova aba">Ver print <span aria-hidden="true">↗</span></a></div>
+  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103527_841.jpg" aria-label="Visualizar print original do depoimento de Rogério sem sair do site">Ver print <span aria-hidden="true">↗</span></a></div>
 </article>
 <article class="review-card">
   <div class="review-card-top"><div class="review-person"><span class="review-avatar" aria-hidden="true">T</span><div><h3>Tatiana</h3><span>Cliente Leão Play</span></div></div><span class="review-quote-mark" aria-hidden="true">“</span></div>
   <blockquote class="review-text">Está sendo maravilhoso a experiência com vcs !!</blockquote>
-  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103542_416.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem do depoimento de Tatiana em nova aba">Ver print <span aria-hidden="true">↗</span></a></div>
+  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103542_416.jpg" aria-label="Visualizar print original do depoimento de Tatiana sem sair do site">Ver print <span aria-hidden="true">↗</span></a></div>
 </article>
 <article class="review-card">
   <div class="review-card-top"><div class="review-person"><span class="review-avatar" aria-hidden="true">J</span><div><h3>José</h3><span>Cliente Leão Play</span></div></div><span class="review-quote-mark" aria-hidden="true">“</span></div>
   <blockquote class="review-text">Muito bom esse aplicativo</blockquote>
-  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103606_186.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem do depoimento de José em nova aba">Ver print <span aria-hidden="true">↗</span></a></div>
+  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103606_186.jpg" aria-label="Visualizar print original do depoimento de José sem sair do site">Ver print <span aria-hidden="true">↗</span></a></div>
 </article>
       </div>
     </div>
@@ -228,6 +265,66 @@ Que seja uma boa indicação para continuar com essa estrutura de atendimento.</
 </script>
 <!-- V10 FIM: depoimentos reais -->
 
+<!-- V11 INÍCIO: visualização do print dentro do site -->
+<dialog id="review-lightbox" class="review-lightbox" aria-labelledby="review-lightbox-title" aria-describedby="review-lightbox-hint">
+  <div class="review-lightbox-inner">
+    <div class="review-lightbox-heading"><div><span class="review-lightbox-kicker">DEPOIMENTO ORIGINAL</span><h3 id="review-lightbox-title">Print do cliente</h3></div><button type="button" class="review-lightbox-close" data-close-review aria-label="Fechar print e voltar aos depoimentos" title="Fechar">×</button></div>
+    <div class="review-lightbox-body"><img id="review-lightbox-image" alt="" decoding="async"><p class="review-lightbox-error" id="review-lightbox-error" hidden>Não foi possível carregar a imagem neste momento. Tente novamente mais tarde.</p></div>
+    <div class="review-lightbox-footer"><p id="review-lightbox-hint">Feche para continuar no mesmo ponto do site.</p><button type="button" class="review-lightbox-back" data-close-review>← Voltar aos depoimentos</button></div>
+  </div>
+</dialog>
+<script id="leao-v11-review-lightbox-js">
+/* Visualização no próprio site, com fechamento por botão, toque fora, Esc ou voltar do celular. */
+(() => {
+  const dialog = document.getElementById('review-lightbox');
+  const img = document.getElementById('review-lightbox-image');
+  const title = document.getElementById('review-lightbox-title');
+  const error = document.getElementById('review-lightbox-error');
+  if (!dialog || !img || !title || !error || typeof dialog.showModal !== 'function') return;
+  let trigger = null;
+  let hasModalHistory = false;
+  function hide(fromBrowserBack = false) {
+    if (!dialog.open) return;
+    dialog.close();
+    img.removeAttribute('src');
+    error.hidden = true;
+    if (trigger && trigger.isConnected) trigger.focus({preventScroll: true});
+    trigger = null;
+    if (hasModalHistory) {
+      hasModalHistory = false;
+      if (!fromBrowserBack) history.back();
+    }
+  }
+  for (const link of document.querySelectorAll('#depoimentos .review-card-bottom a')) {
+    link.addEventListener('click', (event) => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      if (dialog.open) return;
+      trigger = link;
+      const name = link.closest('.review-card')?.querySelector('.review-person h3')?.textContent?.trim() || 'cliente';
+      title.textContent = 'Depoimento de ' + name;
+      img.alt = 'Print original do comentário de ' + name;
+      error.hidden = true;
+      img.removeAttribute('src');
+      img.src = link.href;
+      try {
+        dialog.showModal();
+        history.pushState({leaoReviewModal: true}, '', location.href);
+        hasModalHistory = true;
+      } catch (e) {
+        if (!dialog.open) window.location.assign(link.href);
+      }
+    });
+  }
+  img.addEventListener('error', () => { img.removeAttribute('src'); error.hidden = false; });
+  for (const closeButton of dialog.querySelectorAll('[data-close-review]')) closeButton.addEventListener('click', () => hide());
+  dialog.addEventListener('click', (event) => { if (event.target === dialog) hide(); });
+  dialog.addEventListener('cancel', (event) => { event.preventDefault(); hide(); });
+  window.addEventListener('popstate', () => { if (dialog.open) hide(true); });
+})();
+</script>
+<!-- V11 FIM: visualização do print -->
+
 <section class="section plans-section" id="planos"><div class="container"><div class="section-heading center"><p class="section-kicker">PLANOS LEÃO PLAY</p><h2 class="section-title">Escolha o seu ritmo.<br><span>A gente cuida do resto.</span></h2><p class="section-text">Valores de referência. Nossa equipe confirma a opção disponível e o valor final para seu aparelho.</p></div><div class="plans-grid">
 <article class="plan-card"><span class="plan-tag">IPTV</span><h3>Mensal</h3><p class="plan-period">Flexibilidade para começar</p><p class="plan-start">a partir de</p><p class="plan-price"><span>R$</span>25<small>,00</small></p><p class="plan-suffix">por mês</p><a class="btn btn-plan" href="https://wa.me/5591991618878" data-wa="mensal" target="_blank" rel="noopener noreferrer" >Consultar mensal <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></article>
 <article class="plan-card highlighted"><span class="plan-tag">IPTV</span><h3>Trimestral</h3><p class="plan-period">Mais tempo para aproveitar</p><p class="plan-start">a partir de</p><p class="plan-price"><span>R$</span>65<small>,00</small></p><p class="plan-suffix">por 3 meses</p><a class="btn btn-plan" href="https://wa.me/5591991618878" data-wa="trimestral" target="_blank" rel="noopener noreferrer" >Consultar trimestral <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></article>
@@ -235,6 +332,19 @@ Que seja uma boa indicação para continuar com essa estrutura de atendimento.</
 <article class="plan-card"><span class="plan-tag p2p-tag">P2P</span><h3>P2P Android</h3><p class="plan-period">Para aparelhos compatíveis</p><p class="plan-start">mensal</p><p class="plan-price"><span>R$</span>30<small>,00</small></p><p class="plan-suffix">por mês</p><a class="btn btn-plan" href="https://wa.me/5591991618878" data-wa="p2p" target="_blank" rel="noopener noreferrer" >Consultar P2P <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></article>
 </div><p class="price-note">No IPTV, o valor da primeira contratação pode variar conforme o aplicativo necessário. A equipe confirma tudo antes da contratação. Outros períodos P2P: consulte o atendimento.</p><div class="section-link"><a href="./planos.html">Ver detalhes dos planos <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></div></section>
 <section class="section faq-section" id="duvidas"><div class="container faq-grid"><div><p class="section-kicker">TUDO MAIS CLARO</p><h2 class="section-title">Dúvidas?<br><span>Aqui é simples.</span></h2><p class="section-text">Se não encontrar a resposta, nossa equipe conversa com você pelo WhatsApp.</p><a class="btn btn-ghost" href="https://wa.me/5591991618878" data-wa="geral" target="_blank" rel="noopener noreferrer" >Falar com atendimento <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div><div class="faq-list"><details><summary>Funciona na minha Smart TV? <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Há opções para diferentes aparelhos. A compatibilidade depende do modelo e do aplicativo, e é confirmada no atendimento.</p></details><details><summary>Qual é a diferença entre IPTV e P2P? <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>São modalidades de distribuição de conteúdo. Na Leão Play, o P2P é oferecido para dispositivos Android compatíveis; a equipe pode orientar sobre as opções.</p></details><details><summary>Por que o primeiro valor IPTV pode variar? <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Alguns aplicativos exigem ativação inicial. Quando aplicável, esse custo já é considerado no valor final do pacote informado pela equipe.</p></details><details><summary>Posso solicitar um teste? <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Sim, entre em contato pelo WhatsApp para consultar a disponibilidade e as condições de teste.</p></details></div></div></section>
+<!-- V12: história da empresa em seção separada do carrossel de clientes -->
+<section class="leao-history-section" aria-labelledby="leao-history-title">
+  <div class="container">
+    <div class="leao-history-panel">
+      <div class="leao-history-year"><span>História da Leão Play</span><strong>Desde <em>2022</em></strong></div>
+      <div class="leao-history-text">
+        <h2 id="leao-history-title">Experiência construída ao longo dos anos.</h2>
+        <p>Estamos no mercado desde 2022, orientando clientes na escolha e utilização de aplicativos para diferentes aparelhos.</p>
+        <p class="leao-history-note">Nosso número atual de WhatsApp está em uso desde outubro de 2023, após uma mudança de contato.</p>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="closing-section section"><div class="container"><div class="closing-box"><div class="closing-decoration"></div><p class="section-kicker">A SUA PRÓXIMA EXPERIÊNCIA</p><h2>Pronto para conhecer<br><em>a Leão Play?</em></h2><p>Fale com nossa equipe, tire suas dúvidas e descubra a opção certa para o seu aparelho.</p><a class="btn btn-primary" href="https://wa.me/5591991618878" data-wa="geral" target="_blank" rel="noopener noreferrer" >Conversar pelo WhatsApp <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></div></section>
 </main><footer class="site-footer"><div class="container footer-grid">
 <div><a class="footer-brand" href="./index.html"><img src="https://midia.leaoplay.com.br/4925006378506587712.jpg" alt="Leão Play" width="49" height="49"><strong>LEÃO PLAY</strong></a><p>Seu entretenimento, do seu jeito.<br>Atendimento para encontrar sua melhor opção.</p></div>
