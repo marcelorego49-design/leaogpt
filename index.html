@@ -32,6 +32,60 @@
 @media(max-width:540px){.devices-section .device-logos-compact{gap:9px}.devices-section .device-logos-compact>.device-compat-card{min-height:65px;padding:8px 9px;gap:8px}.devices-section .device-logos-compact .device-thumb-frame{width:43px;height:43px;min-width:43px;max-width:43px;flex-basis:43px}.devices-section .device-logos-compact .device-name{font-size:.73rem}.devices-section .device-logos-compact>.compact-device-note{min-height:43px;padding:10px}}
 @media(max-width:360px){.devices-section .device-logos-compact .device-thumb-frame{width:38px;height:38px;min-width:38px;max-width:38px;flex-basis:38px}.devices-section .device-logos-compact>.device-compat-card{gap:6px;padding:7px}.devices-section .device-logos-compact .device-name{font-size:.7rem}}
 </style>
+<style id="leao-reviews-v10">
+/* V10: apenas seção de depoimentos, carrossel manual. O restante do site segue intacto. */
+.reviews-section{background:radial-gradient(ellipse at 85% 0%,rgba(217,174,102,.075),transparent 43%),#0d1118;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.055)}
+.reviews-section .reviews-heading{display:flex;justify-content:space-between;gap:36px;align-items:end;margin-bottom:26px}
+.reviews-section .reviews-heading-main{min-width:0}
+.reviews-section .section-title{font-size:clamp(2rem,3.5vw,3.25rem)}
+.reviews-section .section-text{margin-top:16px;max-width:690px}
+.reviews-section .reviews-count{flex:0 0 auto;display:flex;align-items:center;gap:13px;padding:16px 18px;border:1px solid rgba(217,174,102,.18);border-radius:14px;background:rgba(217,174,102,.055)}
+.reviews-section .reviews-count strong{color:#e9c68e;font-size:2.1rem;line-height:1;font-weight:800;letter-spacing:-.06em}
+.reviews-section .reviews-count span{font-size:.72rem;line-height:1.55;color:#bfc5ce;font-weight:650;white-space:nowrap}
+.reviews-section .reviews-toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0 0 13px}
+.reviews-section .reviews-instruction{display:flex;align-items:center;gap:9px;color:#b3bdc9;font-size:.8rem;line-height:1.4;font-weight:610}
+.reviews-section .reviews-instruction-icon{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;flex:0 0 26px;border-radius:50%;color:#e5bf83;border:1px solid rgba(217,174,102,.2);background:rgba(217,174,102,.065);font-size:1rem}
+.reviews-section .reviews-arrows{display:flex;gap:9px;align-items:center}
+.reviews-section .reviews-arrow{display:grid;place-items:center;width:40px;height:40px;flex:0 0 40px;border:1px solid rgba(217,174,102,.26);border-radius:50%;background:rgba(217,174,102,.065);color:#e8c68e;cursor:pointer;transition:border-color .2s,background .2s,transform .2s}
+.reviews-section .reviews-arrow:hover:not(:disabled){background:rgba(217,174,102,.17);border-color:rgba(217,174,102,.55)}
+.reviews-section .reviews-arrow:active:not(:disabled){transform:scale(.96)}
+.reviews-section .reviews-arrow:disabled{opacity:.3;cursor:default}
+.reviews-section .reviews-arrow svg{width:18px;height:18px}
+.reviews-section .reviews-carousel{position:relative;min-width:0}
+.reviews-section .reviews-track{display:flex;gap:15px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:0;scrollbar-width:none;-ms-overflow-style:none;padding:2px 1px 15px;outline-offset:5px}
+.reviews-section .reviews-track::-webkit-scrollbar{display:none}
+.reviews-section .review-card{flex:0 0 calc((100% - 45px)/3.18);min-width:0;min-height:292px;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;padding:23px 22px 18px;border:1px solid rgba(255,255,255,.105);border-radius:17px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.024) 55%,rgba(255,255,255,.038));box-shadow:0 14px 38px rgba(0,0,0,.10)}
+.reviews-section .review-card-top{display:flex;align-items:start;justify-content:space-between;gap:12px;margin-bottom:16px}
+.reviews-section .review-person{display:flex;align-items:center;gap:10px;min-width:0}
+.reviews-section .review-person h3{color:#f4f4f2;font-size:.95rem;font-weight:750;line-height:1.25;margin:0 0 4px}
+.reviews-section .review-person span:not(.review-avatar){display:block;color:#aeb7c3;font-size:.74rem;line-height:1.45}
+.reviews-section .review-avatar{display:flex;align-items:center;justify-content:center;flex:0 0 41px;width:41px;height:41px;border:1px solid rgba(217,174,102,.24);border-radius:50%;background:rgba(217,174,102,.11);color:#eac78c;font-size:1rem;font-weight:800}
+.reviews-section .review-quote-mark{font-family:Georgia,serif;line-height:.8;font-size:3.3rem;color:rgba(217,174,102,.38)}
+.reviews-section .review-text{margin:0;color:#e1e5eb;font-size:.88rem;line-height:1.75;white-space:pre-line;overflow-wrap:anywhere}
+.reviews-section .review-text p{margin:0}
+.reviews-section .review-full{margin-top:11px}
+.reviews-section .review-full summary{display:inline-flex;align-items:center;gap:5px;color:#e7c38b;font-weight:720;font-size:.8rem;cursor:pointer;list-style:none}
+.reviews-section .review-full summary::-webkit-details-marker{display:none}
+.reviews-section .review-full[open] summary span{transform:rotate(180deg)}
+.reviews-section .review-full-text{margin:12px 0 0;padding:12px 13px;border-left:2px solid rgba(217,174,102,.5);background:rgba(0,0,0,.11);border-radius:0 9px 9px 0;font-size:.84rem;line-height:1.75;color:#d8dee5;white-space:pre-line;overflow-wrap:anywhere}
+.reviews-section .review-card-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:20px}
+.reviews-section .review-card-bottom time{color:#8995a4;font-size:.75rem}
+.reviews-section .review-card-bottom a{border:1px solid rgba(217,174,102,.23);border-radius:9px;background:rgba(217,174,102,.055);color:#e7c38b;padding:7px 10px;font-size:.77rem;font-weight:720;white-space:nowrap;transition:background .18s,border-color .18s}
+.reviews-section .review-card-bottom a:hover{background:rgba(217,174,102,.14);border-color:rgba(217,174,102,.46)}
+.reviews-section .review-card-bottom a span{font-size:1rem;margin-left:3px}
+.reviews-section .reviews-progress-row{display:flex;align-items:center;gap:14px;margin-top:9px}
+.reviews-section .reviews-progress{height:3px;flex:1;border-radius:99px;background:rgba(255,255,255,.10);overflow:hidden}
+.reviews-section .reviews-progress-bar{height:100%;width:var(--reviews-progress,36%);background:linear-gradient(90deg,#aa824a,#ebc994);border-radius:inherit;transition:width .15s ease}
+.reviews-section .reviews-progress-label{color:#aeb7c3;font-size:.73rem;font-variant-numeric:tabular-nums;min-width:60px;text-align:right}
+.reviews-section .reviews-footer{display:flex;justify-content:space-between;align-items:center;gap:22px;margin-top:25px;padding:20px 2px 0;border-top:1px solid rgba(255,255,255,.065)}
+.reviews-section .reviews-footer p{margin:0;color:#929ead;font-size:.78rem;line-height:1.65;max-width:600px}
+.reviews-section .reviews-footer .btn{flex:0 0 auto;min-height:44px;font-size:.82rem;padding:11px 17px}
+.reviews-section .reviews-track:focus-visible,.reviews-section .reviews-arrow:focus-visible,.reviews-section .review-full summary:focus-visible{outline:2px solid #eac78c;outline-offset:3px}
+@media(max-width:1040px){.reviews-section .review-card{flex-basis:calc((100% - 23px)/2.12)}}
+@media(max-width:740px){.reviews-section .reviews-heading{align-items:start;flex-direction:column;gap:15px}.reviews-section .reviews-count{padding:11px 14px}.reviews-section .reviews-count strong{font-size:1.65rem}.reviews-section .reviews-count span{font-size:.69rem}.reviews-section .reviews-footer{align-items:stretch;flex-direction:column}.reviews-section .reviews-footer .btn{align-self:stretch}}
+@media(max-width:540px){.reviews-section .reviews-heading{margin-bottom:23px}.reviews-section .reviews-toolbar{margin-bottom:11px}.reviews-section .reviews-instruction{font-size:.75rem}.reviews-section .reviews-arrows{gap:7px}.reviews-section .reviews-arrow{width:36px;height:36px;flex-basis:36px}.reviews-section .reviews-track{gap:11px;padding-bottom:11px}.reviews-section .review-card{flex-basis:calc(100% - 39px);min-height:282px;padding:20px 19px 17px;border-radius:15px}.reviews-section .review-card-top{margin-bottom:12px}.reviews-section .review-text{font-size:.87rem}.reviews-section .reviews-footer{margin-top:21px;padding-top:17px}}
+@media(prefers-reduced-motion:reduce){.reviews-section .reviews-progress-bar,.reviews-section .reviews-arrow{transition:none}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Pular para conteúdo</a>
@@ -49,6 +103,131 @@
 <section class="section devices-section" id="dispositivos"><div class="container section-split"><div><p class="section-kicker">COMPATIBILIDADE</p><h2 class="section-title">Seu aparelho.<br><span>Mais possibilidades.</span></h2><p class="section-text">Há opções de aplicativos para diferentes modelos de TV, sistemas e dispositivos. Nossa equipe ajuda a verificar o que funciona no seu.</p></div><div class="device-cloud device-logos-compact" role="list" aria-label="Marcas e sistemas de dispositivos"><div class="device-compat-card" role="listitem"><span class="device-thumb-frame"><img class="device-thumb" src="https://midia.leaoplay.com.br/dispositivos/Imagem%20do%20ChatGPT%2015%20de%20out.%20de%202026%2C%2015_18_19-1.png" alt="Logotipo Samsung" loading="lazy" decoding="async" width="48" height="48" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="device-thumb-fallback" hidden>S</span></span><span class="device-name">Samsung</span></div><div class="device-compat-card" role="listitem"><span class="device-thumb-frame roku-wordmark" aria-hidden="true">Roku</span><span class="device-name">Roku TV</span></div><div class="device-compat-card" role="listitem"><span class="device-thumb-frame"><img class="device-thumb" src="https://midia.leaoplay.com.br/dispositivos/Imagem%20do%20ChatGPT%2015%20de%20out.%20de%202026%2C%2015_18_23-3.png" alt="Logotipo LG" loading="lazy" decoding="async" width="48" height="48" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="device-thumb-fallback" hidden>LG</span></span><span class="device-name">LG</span></div><div class="device-compat-card" role="listitem"><span class="device-thumb-frame"><img class="device-thumb" src="https://midia.leaoplay.com.br/dispositivos/Imagem%20do%20ChatGPT%2015%20de%20out.%20de%202026%2C%2015_18_26-4.png" alt="Logotipo Android TV" loading="lazy" decoding="async" width="48" height="48" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="device-thumb-fallback" hidden>TV</span></span><span class="device-name">Android TV</span></div><div class="device-compat-card" role="listitem"><span class="device-thumb-frame"><img class="device-thumb" src="https://midia.leaoplay.com.br/dispositivos/Imagem%20do%20ChatGPT%2015%20de%20out.%20de%202026%2C%2015_18_28-5.png" alt="Logotipo Google TV" loading="lazy" decoding="async" width="48" height="48" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="device-thumb-fallback" hidden>G</span></span><span class="device-name">Google TV</span></div><div class="device-compat-card" role="listitem"><span class="device-thumb-frame"><img class="device-thumb" src="https://midia.leaoplay.com.br/dispositivos/Imagem%20do%20ChatGPT%2015%20de%20out.%20de%202026%2C%2015_18_29-6.png" alt="Logotipo VIDAA" loading="lazy" decoding="async" width="48" height="48" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="device-thumb-fallback" hidden>V</span></span><span class="device-name">VIDAA</span></div><div class="device-compat-card" role="listitem"><span class="device-thumb-frame"><img class="device-thumb" src="https://midia.leaoplay.com.br/dispositivos/Imagem%20do%20ChatGPT%2015%20de%20out.%20de%202026%2C%2015_18_32-7.png" alt="Logotipo iOS" loading="lazy" decoding="async" width="48" height="48" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="device-thumb-fallback" hidden>iOS</span></span><span class="device-name">iOS</span></div><div class="device-compat-card" role="listitem"><span class="device-thumb-frame"><img class="device-thumb" src="https://midia.leaoplay.com.br/dispositivos/Imagem%20do%20ChatGPT%2015%20de%20out.%20de%202026%2C%2015_18_33-8.png" alt="Logotipo Android" loading="lazy" decoding="async" width="48" height="48" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="device-thumb-fallback" hidden>A</span></span><span class="device-name">Android</span></div><div class="device-compat-card" role="listitem"><span class="device-thumb-frame"><img class="device-thumb" src="https://midia.leaoplay.com.br/dispositivos/Imagem%20do%20ChatGPT%2015%20de%20out.%20de%202026%2C%2015_18_35-9.png" alt="Logotipo Fire TV Stick" loading="lazy" decoding="async" width="48" height="48" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="device-thumb-fallback" hidden>Fire</span></span><span class="device-name">Fire TV Stick</span></div><div class="device-compat-card" role="listitem"><span class="device-thumb-frame"><img class="device-thumb" src="https://midia.leaoplay.com.br/dispositivos/Imagem%20do%20ChatGPT%2015%20de%20out.%20de%202026%2C%2015_18_36-10.png" alt="Logotipo Windows" loading="lazy" decoding="async" width="48" height="48" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="device-thumb-fallback" hidden>W</span></span><span class="device-name">Windows</span></div><div class="device-last compact-device-note" role="listitem">Outros aparelhos? Consulte nossa equipe.</div></div></div></section>
 <section class="section benefits-section"><div class="container"><div class="section-heading"><p class="section-kicker">POR QUE LEÃO PLAY</p><h2 class="section-title">Mais simples para você.<br><span>Do começo ao play.</span></h2></div><div class="benefit-grid"><article class="benefit-card"><span class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16m10-16v16M3 9h4m-4 6h4m10-6h4m-4 6h4"/></svg></span><h3>Opções de entretenimento</h3><p>Canais, filmes e séries organizados conforme a opção disponível.</p></article><article class="benefit-card"><span class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8m-4-4v4"/></svg></span><h3>Para diferentes telas</h3><p>Alternativas de aplicativos de acordo com a compatibilidade do aparelho.</p></article><article class="benefit-card"><span class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14v-3a9 9 0 0 1 18 0v3M3 14v5h4v-6H3Zm14-1v6h4v-5h-4Z"/></svg></span><h3>Atendimento próximo</h3><p>Orientação personalizada para escolher o serviço e começar.</p></article></div></div></section>
 <section class="section video-section" id="demonstracao"><div class="container video-grid"><div class="video-copy"><p class="section-kicker">VEJA POR DENTRO</p><h2 class="section-title">Da sua curiosidade<br><span>para sua tela.</span></h2><p class="section-text">Conheça a navegação por canais, filmes e séries em um dos aplicativos disponíveis na Leão Play.</p><div class="video-facts"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6.8 17 12l-8 5.2V6.8Z"/></svg> Demonstração real</span><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg> Cerca de 55 segundos</span></div></div><div class="video-panel"><div class="video-panel-bar"><span><i></i><i></i><i></i></span><strong>DEMONSTRAÇÃO LEÃO PLAY</strong><span class="live-tag">PLAY</span></div><div class="video-frame" id="video-frame" data-video="wuzB7MB8KTY"><div class="video-poster"><span class="video-poster-word">LEÃO <b>PLAY</b></span><span class="video-poster-sub">Conheça o aplicativo em ação</span><button class="video-launch" type="button" id="video-launch" aria-label="Reproduzir demonstração do aplicativo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6.8 17 12l-8 5.2V6.8Z"/></svg></button></div></div><div class="video-bottom"><span>Exemplo de aplicativo disponível na Leão Play.</span><a href="https://www.youtube.com/watch?v=wuzB7MB8KTY" target="_blank" rel="noopener noreferrer">Ver no YouTube ↗</a></div><a class="btn btn-primary video-cta" href="https://wa.me/5591991618878" data-wa="video" target="_blank" rel="noopener noreferrer" >Quero experimentar <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></div></section>
+<!-- V10 INÍCIO: depoimentos reais, carrossel manual isolado -->
+<section class="section reviews-section" id="depoimentos" aria-labelledby="reviews-title">
+  <div class="container">
+    <div class="reviews-heading"><div class="reviews-heading-main">
+      <p class="section-kicker">A OPINIÃO DE QUEM JÁ CONHECE</p>
+      <h2 class="section-title" id="reviews-title">Experiências reais.<br><span>Nas palavras dos clientes.</span></h2>
+      <p class="section-text">Atendimento, facilidade de uso e experiência com o aplicativo: veja o que nossos clientes compartilharam.</p>
+    </div><div class="reviews-count"><strong>08</strong><span>depoimentos recebidos<br>em 16/10/2026</span></div></div>
+    <div class="reviews-toolbar">
+      <p class="reviews-instruction"><span class="reviews-instruction-icon" aria-hidden="true">↔</span><span>Deslize para ver mais depoimentos</span></p>
+      <div class="reviews-arrows" role="group" aria-label="Navegação dos depoimentos">
+        <button class="reviews-arrow" type="button" id="reviews-prev" aria-label="Ver depoimento anterior" aria-controls="reviews-track" disabled><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+        <button class="reviews-arrow" type="button" id="reviews-next" aria-label="Ver próximo depoimento" aria-controls="reviews-track"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="reviews-carousel">
+      <div class="reviews-track" id="reviews-track" tabindex="0" role="region" aria-label="Oito depoimentos de clientes. Deslize horizontalmente ou use as setas." aria-roledescription="carrossel">
+<article class="review-card">
+  <div class="review-card-top"><div class="review-person"><span class="review-avatar" aria-hidden="true">L</span><div><h3>Luiz</h3><span>Cliente Leão Play</span></div></div><span class="review-quote-mark" aria-hidden="true">“</span></div>
+  <blockquote class="review-text"><p>Minha experiência com vocês é muito boa. Sempre que preciso de um auxílio no aplicativo ou tirar dúvidas você está sempre pronto para realizar ambas…</p></blockquote><details class="review-full"><summary>Leia o comentário completo <span aria-hidden="true">⌄</span></summary><blockquote class="review-full-text">Bom dia Marcelo!!
+
+Minha experiência com vocês é muito boa. Sempre que preciso de um auxílio no aplicativo ou tirar dúvidas você está sempre pronto para realizar ambas, e essa semana eu estava falando justamente isso com algumas pessoas que eu estava te indicando, que o aplicativo é bom ( pois eu acho que já os tenho a mais de dois anos), você tem sempre uma resposta rápida ( claro que dentro da sua disponibilidade) e o valor também que é muito acessível, no entanto que teve um colega que fechou contigo justamente por essa confiança que passei para ele.
+
+Não tenho nada a reclamar, somente falar muito bem.
+
+Tenha uma excelente sexta-feira e bom trabalho.</blockquote></details>
+  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103513_500.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem do depoimento de Luiz em nova aba">Ver print <span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="review-card">
+  <div class="review-card-top"><div class="review-person"><span class="review-avatar" aria-hidden="true">G</span><div><h3>George</h3><span>Cliente Leão Play</span></div></div><span class="review-quote-mark" aria-hidden="true">“</span></div>
+  <blockquote class="review-text">Gosto do serviço pois entrega  que promete, e o suporte é eficiente, o companheiro Marcelo sempre responde! Tira as dúvidas, já uso o serviço a algum  tempo 👍</blockquote>
+  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_104604_787.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem do depoimento de George em nova aba">Ver print <span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="review-card">
+  <div class="review-card-top"><div class="review-person"><span class="review-avatar" aria-hidden="true">M</span><div><h3>Maria</h3><span>Cliente Leão Play</span></div></div><span class="review-quote-mark" aria-hidden="true">“</span></div>
+  <blockquote class="review-text">... O app é completo,não trava,a qualidade da imagem é ótima!Recomendo de olhos fechados!</blockquote>
+  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103500_971.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem do depoimento de Maria em nova aba">Ver print <span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="review-card">
+  <div class="review-card-top"><div class="review-person"><span class="review-avatar" aria-hidden="true">R</span><div><h3>Rodrigo</h3><span>Cliente Leão Play</span></div></div><span class="review-quote-mark" aria-hidden="true">“</span></div>
+  <blockquote class="review-text">Olá, minha experiência está ótima, o app é muito bom e fácil de usar.</blockquote>
+  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG-20261016-WA0047.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem do depoimento de Rodrigo em nova aba">Ver print <span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="review-card">
+  <div class="review-card-top"><div class="review-person"><span class="review-avatar" aria-hidden="true">D</span><div><h3>Demi</h3><span>Cliente Leão Play</span></div></div><span class="review-quote-mark" aria-hidden="true">“</span></div>
+  <blockquote class="review-text">O aplicativo do Leão Play está na lista de que está transformando a forma como consumimos conteúdo audiovisual…</blockquote><details class="review-full"><summary>Leia o comentário completo <span aria-hidden="true">⌄</span></summary><blockquote class="review-full-text">O aplicativo do Leão Play está na lista de que está transformando a forma como consumimos conteúdo audiovisual.
+Oferecendo catálogos vastos a filmes, séries, documentários ,etc...
+É muito legal o entretenimento, a liberdade e o incentivo que a plataforma nos oferece!
+Que seja uma boa indicação para continuar com essa estrutura de atendimento.</blockquote></details>
+  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103442_827.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem do depoimento de Demi em nova aba">Ver print <span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="review-card">
+  <div class="review-card-top"><div class="review-person"><span class="review-avatar" aria-hidden="true">R</span><div><h3>Rogério</h3><span>Cliente Leão Play</span></div></div><span class="review-quote-mark" aria-hidden="true">“</span></div>
+  <blockquote class="review-text">Bom dia nao tenho que reclamar sempre fui bem atendido quando solicitado parabéns pelo profissionalismo</blockquote>
+  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103527_841.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem do depoimento de Rogério em nova aba">Ver print <span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="review-card">
+  <div class="review-card-top"><div class="review-person"><span class="review-avatar" aria-hidden="true">T</span><div><h3>Tatiana</h3><span>Cliente Leão Play</span></div></div><span class="review-quote-mark" aria-hidden="true">“</span></div>
+  <blockquote class="review-text">Está sendo maravilhoso a experiência com vcs !!</blockquote>
+  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103542_416.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem do depoimento de Tatiana em nova aba">Ver print <span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="review-card">
+  <div class="review-card-top"><div class="review-person"><span class="review-avatar" aria-hidden="true">J</span><div><h3>José</h3><span>Cliente Leão Play</span></div></div><span class="review-quote-mark" aria-hidden="true">“</span></div>
+  <blockquote class="review-text">Muito bom esse aplicativo</blockquote>
+  <div class="review-card-bottom"><time datetime="2026-10-16">16/10/2026</time><a href="https://midia.leaoplay.com.br/Clientes%20coment/IMG_20261016_103606_186.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem do depoimento de José em nova aba">Ver print <span aria-hidden="true">↗</span></a></div>
+</article>
+      </div>
+    </div>
+    <div class="reviews-progress-row" aria-hidden="true"><div class="reviews-progress"><div class="reviews-progress-bar" id="reviews-progress"></div></div><span class="reviews-progress-label" id="reviews-progress-label">01 / 08</span></div>
+    <div class="reviews-footer"><p>Depoimentos compartilhados pelos clientes, com acesso às imagens das conversas. As experiências podem variar.</p><a class="btn btn-outline" href="https://wa.me/5591991618878" data-wa="geral" target="_blank" rel="noopener noreferrer">Falar com a Leão Play <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+<script id="leao-reviews-v10-js">
+/* JS somente para as setas e indicador do carrossel de depoimentos. Não altera app.js. */
+(() => {
+  const track = document.getElementById('reviews-track');
+  const prev = document.getElementById('reviews-prev');
+  const next = document.getElementById('reviews-next');
+  const progress = document.getElementById('reviews-progress');
+  const label = document.getElementById('reviews-progress-label');
+  if (!track || !prev || !next || !progress || !label) return;
+  const cards = [...track.querySelectorAll('.review-card')];
+  if (cards.length < 2) return;
+  let scheduled = false;
+  const stepSize = () => cards[1].offsetLeft - cards[0].offsetLeft;
+  const endPosition = () => Math.max(0, track.scrollWidth - track.clientWidth);
+  function update() {
+    scheduled = false;
+    const max = endPosition();
+    const left = track.scrollLeft;
+    prev.disabled = left <= 3;
+    next.disabled = left >= max - 3;
+    const viewed = max && left >= max - 3 ? cards.length : Math.min(cards.length, 1 + Math.round(left / Math.max(1, stepSize())));
+    label.textContent = String(viewed).padStart(2, '0') + ' / ' + String(cards.length).padStart(2, '0');
+    const initial = (track.clientWidth / Math.max(1, track.scrollWidth)) * 100;
+    const percent = max ? initial + (100 - initial) * Math.max(0, Math.min(1, left / max)) : 100;
+    progress.style.width = percent.toFixed(2) + '%';
+  }
+  function scheduleUpdate() {
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(update);
+  }
+  function move(direction) {
+    const step = stepSize();
+    if (!step) return;
+    const index = Math.round(track.scrollLeft / step);
+    const target = Math.max(0, Math.min(endPosition(), (index + direction) * step));
+    const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    track.scrollTo({left: target, behavior: reducedMotion ? 'instant' : 'smooth'});
+  }
+  prev.addEventListener('click', () => move(-1));
+  next.addEventListener('click', () => move(1));
+  track.addEventListener('scroll', scheduleUpdate, {passive:true});
+  window.addEventListener('resize', scheduleUpdate, {passive:true});
+  track.addEventListener('keydown', (event) => {
+    if (event.target !== track || !['ArrowLeft','ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    move(event.key === 'ArrowRight' ? 1 : -1);
+  });
+  update();
+})();
+</script>
+<!-- V10 FIM: depoimentos reais -->
+
 <section class="section plans-section" id="planos"><div class="container"><div class="section-heading center"><p class="section-kicker">PLANOS LEÃO PLAY</p><h2 class="section-title">Escolha o seu ritmo.<br><span>A gente cuida do resto.</span></h2><p class="section-text">Valores de referência. Nossa equipe confirma a opção disponível e o valor final para seu aparelho.</p></div><div class="plans-grid">
 <article class="plan-card"><span class="plan-tag">IPTV</span><h3>Mensal</h3><p class="plan-period">Flexibilidade para começar</p><p class="plan-start">a partir de</p><p class="plan-price"><span>R$</span>25<small>,00</small></p><p class="plan-suffix">por mês</p><a class="btn btn-plan" href="https://wa.me/5591991618878" data-wa="mensal" target="_blank" rel="noopener noreferrer" >Consultar mensal <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></article>
 <article class="plan-card highlighted"><span class="plan-tag">IPTV</span><h3>Trimestral</h3><p class="plan-period">Mais tempo para aproveitar</p><p class="plan-start">a partir de</p><p class="plan-price"><span>R$</span>65<small>,00</small></p><p class="plan-suffix">por 3 meses</p><a class="btn btn-plan" href="https://wa.me/5591991618878" data-wa="trimestral" target="_blank" rel="noopener noreferrer" >Consultar trimestral <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></article>

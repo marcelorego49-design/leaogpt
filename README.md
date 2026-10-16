@@ -113,3 +113,19 @@ Somente `index.html` foi alterado em relação à V4. A seção usa miniaturas d
 ## Atualização V8 — plano trimestral
 
 Preço do plano trimestral IPTV alterado de R$ 75,00 para **R$ 65,00** nas páginas Início e Planos. Demais preços e funcionalidades preservados.
+
+
+## Atualização V9 — Depoimentos reais
+
+- A seção de depoimentos foi adicionada **somente em `index.html`**, imediatamente após o vídeo e antes dos planos.
+- São 8 relatos fornecidos pelo responsável, recebidos em 16/10/2026, com links para os 8 prints no R2 (`https://midia.leaoplay.com.br/Clientes%20coment/`).
+- Os 6 primeiros aparecem diretamente; mais 2 podem ser abertos pelo controle nativo "Ver mais 2 depoimentos". O depoimento longo de Luiz inclui versão integral expansível.
+- Nenhuma imagem pesada é baixada na visita ao site apenas por existir um link: prints abrem em nova aba somente quando clicados.
+- CSS específico e isolado no próprio HTML; nenhum JavaScript novo, sem modificar `app.js`, `styles.css`, Pixel, WhatsApp, vídeo, carrossel, dispositivos, preços ou as outras páginas.
+- Foi mantido o valor trimestral de R$ 65,00.
+- Revise as autorizações de publicação e a anonimização dos prints antes de publicar.
+- Para publicar a V9 basta substituir o **`index.html`** no GitHub e aguardar o deploy do Cloudflare Pages.
+
+
+## Atualização V10 — carrossel de depoimentos
+Apenas `index.html` foi alterado: 8 depoimentos continuam preservados, incluindo os textos completos nos botões de expansão, imagens de comprovação, datas e nomes. Navegação horizontal manual (toque, trackpad e setas), sem reprodução automática. O CSS e JS exclusivos dessa seção estão no próprio `index.html`; `app.js`, `styles.css` e as outras páginas permanecem iguais à V9.
