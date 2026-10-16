@@ -49,31 +49,3 @@
 .plan-price>span{font-size:1.12rem}
 .plan-price small{font-size:.95rem}.plan-start{margin-top:14px}.plan-suffix{margin-bottom:15px}.btn-plan{min-height:49px}.faq-list summary{font-size:.86rem;padding:18px 2px}.faq-grid .btn{margin-top:20px}.closing-section{padding:42px 0 63px}.closing-box{padding:43px 18px}.closing-box h2{font-size:2.1rem}.closing-box .btn{width:100%;white-space:normal}.footer-grid{grid-template-columns:1fr;gap:27px}.footer-grid>div:last-child{grid-column:auto}.footer-bottom{flex-direction:column;gap:3px;font-size:.7rem}.site-footer{padding-top:43px}.inner-hero{padding:57px 0 50px}.inner-title{font-size:2.7rem}.inner-hero p:not(.section-kicker){font-size:.92rem}.p2p-panel{flex-direction:column;align-items:stretch;padding:26px 23px}.p2p-panel-action{align-items:stretch}.p2p-panel-action .btn{width:100%}.multi-note{align-items:flex-start}.contact-feature,.contact-options{padding:28px 22px;border-radius:17px}.contact-feature .btn{width:100%}.policy h2{font-size:1.15rem}.policy p{font-size:.88rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marquee-track{animation:none!important}.btn,.benefit-card,.menu-toggle,.faq-list summary svg{transition:none!important}} 
-
-
-/* Dispositivos - logos profissionais */
-.devices-split{align-items:start}
-.devices-panel{display:flex;flex-direction:column;gap:18px}
-.device-logos-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.device-logo-card{position:relative;display:flex;align-items:center;justify-content:center;min-height:112px;padding:14px;border-radius:16px;border:1px solid rgba(255,255,255,.075);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.025));box-shadow:0 18px 50px rgba(0,0,0,.26),inset 0 1px 0 rgba(255,255,255,.04);overflow:hidden;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
-.device-logo-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at top left,rgba(215,176,104,.12),transparent 45%),linear-gradient(135deg,rgba(255,255,255,.03),transparent 50%);pointer-events:none}
-.device-logo-card:hover{transform:translateY(-2px);border-color:rgba(215,176,104,.28);box-shadow:0 20px 54px rgba(0,0,0,.3),0 0 0 1px rgba(215,176,104,.08) inset}
-.device-logo-card img{display:block;max-width:100%;width:100%;height:auto;object-fit:contain;filter:saturate(1.03)}
-.device-logo-fallback{display:none;font-size:.9rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#f1f3f5;text-align:center}
-.device-logo-card.fallback img{display:none}
-.device-logo-card.fallback .device-logo-fallback{display:block}
-.device-panel-note{padding:16px 18px;border-radius:14px;border:1px dashed rgba(255,255,255,.1);background:rgba(255,255,255,.015);color:#aeb7c3;font-size:.85rem;line-height:1.7}
-
-@media(max-width:1100px){
-  .device-logos-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-
-@media(max-width:800px){
-  .devices-panel{gap:16px}
-}
-
-@media(max-width:540px){
-  .device-logos-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .device-logo-card{min-height:86px;padding:10px;border-radius:14px}
-  .device-panel-note{font-size:.78rem;padding:14px 15px;line-height:1.65}
-}
