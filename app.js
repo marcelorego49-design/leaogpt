@@ -2,7 +2,7 @@
 (() => {
   'use strict';
   const PIXEL_ID = '1419384443735371';
-  const VIDEO_ID = 'wuzB7MB8KTY';
+  const VIDEO_ID = 'tSgwHnqlMBE';
   const WHATSAPP_NUMBER = '5591991618878';
   const CONSENT_KEY = 'leaoPlayMarketingConsent_v1';
   const page = document.documentElement.dataset.page || 'home';
